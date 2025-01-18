@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextFirstNum"
+        android:layout_width="299dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:hint="İlk numarayı giriniz"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSecondNum"
+        android:layout_width="299dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="İkinci numarayı giriniz"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFirstNum" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="650px"
+            android:layout_marginRight="20px"
+            android:onClick="topla"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="650px"
+            android:layout_marginRight="10px"
+            android:onClick="cikar"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="650px"
+            android:layout_marginRight="10px"
+            android:onClick="carp"
+            android:text="x" />
+
+        <Button
+            android:id="@+id/buttonDivide"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="650px"
+            android:layout_marginRight="10px"
+            android:onClick="bol"
+            android:text="/" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewConclusion"
+        android:layout_width="308dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="100dp"
+        android:text="Sonuç:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSecondNum" />
+</androidx.constraintlayout.widget.ConstraintLayout>
