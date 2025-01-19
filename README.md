@@ -31,13 +31,15 @@
 -   Safe Args - nav_graph -> secondFragment - https://developer.android.com/guide/navigation/use-graph/safe-args?hl=tr
 
 ```cs
-Safe Args - build.gradle.kts - project
+    Safe Args - build.gradle.kts - project:
+
 plugins {
     id ("androidx.navigation.safeargs.kotlin") version "2.7.7" apply false
 }
 ```
 ```cs
-Safe Args - build.gradle.kts - app
+    Safe Args - build.gradle.kts - app:
+
 plugins {
     id ("kotlin-kapt")
     id ("androidx.navigation.safeargs.kotlin")
@@ -52,3 +54,65 @@ dependencies {
 ```
 
 ![](/images/fragment_view_lifecycle.png)
+
+### 5) Room and Database
+-   Room - https://developer.android.com/training/data-storage/room?hl=tr
+-   Sqlite Online - https://sqliteonline.com/
+-   Entity - Model
+-   Data Access Object (DAO) - Veri Erişimi Nesnesi 
+-   Database
+-   Threading - RxJava - https://developer.android.com/training/data-storage/room/async-queries?hl=tr
+
+-   Fragment
+-   Navigation
+-   Permissions and Controls - İzinler ve Kontroller                        <br />
+    https://developer.android.com/guide/topics/permissions/overview?hl=tr   <br />
+    https://developer.android.com/reference/android/Manifest.permission     <br />
+-   Activity Launcher - Etkinlik Başlatıcısı
+
+-   Basic Create-Read-Delete (CRD) Transaction
+-   Recyclerview Border Row - https://stackoverflow.com/questions/44498524/android-adding-a-border-and-rounding-to-recyclerview-items
+-   MVVM - Model View ViewModel
+
+```cs
+    Nav | Room - build.gradle.kts - project:
+
+plugins {
+    id ("androidx.navigation.safeargs.kotlin") version "2.7.7" apply false
+    id ("com.google.devtools.ksp") version "1.9.10-1.0.13" apply false
+}
+```
+
+```cs
+    Nav | Room - build.gradle.kts - app:
+
+plugins {
+    id ("androidx.navigation.safeargs.kotlin")
+    id ("com.google.devtools.ksp")
+}
+
+dependencies {
+    val nav_version = "2.7.7"
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor ("androidx.room:room-compiler:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    ksp("androidx.room:room-compiler:$room_version")
+
+    implementation ("androidx.room:room-rxjava3:$room_version")
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.2")
+}
+```
+```html
+    manifest - permissions:
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>     //  harici depolama alanı
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"></uses-permission>         //  resim dosyaları
+```
+
+![](/images/Foods/food_app.jpg)
