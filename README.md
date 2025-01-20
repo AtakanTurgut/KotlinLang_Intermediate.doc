@@ -116,3 +116,43 @@ dependencies {
 ```
 
 ![](/images/Foods/food_app.jpg)
+
+### 6) Google Play
+-   https://developer.android.com/distribute?hl=tr
+-   Release - Yayınlama
+-   Android App Icon Generator - https://www.appicon.co/
+-   AAB - Android App Bundle
+
+-   Release -> Production -> Create new release
+
+```
+    unsigned - imzasız: Build -> Build App -> Build APK(s) -- test app
+```
+
+```
+App bundles:
+    Upload files >
+
+    signed - imzalı: Build -> Generate Signed App -> Next - Android App Bundle
+                           -> Create new... -> !!Password!! -> release -> create :: "key.jks" - !!protect!!
+
+    projectDic\app\release\"app-release.aab"
+```
+
+-   Privacy Policy - Gizlilik Politikası : Website URL for Declaration
+
+```cs
+    build.gradle.kts - app:
+
+android {
+    namespace = "com.atakanturgut.foodapp"
+
+    defaultConfig {
+        applicationId = "com.atakanturgut.foodapp"
+
+        targetSdk = 35
+        versionCode = 1             // change versionCode - 2 
+        versionName = "1.0"         // change versionName - "2.0" ...
+    }
+}
+```
